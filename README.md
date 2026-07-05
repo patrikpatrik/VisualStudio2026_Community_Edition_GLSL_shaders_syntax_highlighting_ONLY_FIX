@@ -10,7 +10,7 @@ This is for anyone who had frustrating problems with having multi-staged shaders
   - cs
 
 # **&#8594;**The problem is [shaderlab.json](shaderlab.json)**&#8592;**
-For Visual Studio 2026 it is located here:
+For Visual Studio 2026, this file is located here:
 `C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\CommonExtensions\Microsoft\TextMate\Starterkit\Extensions\shaderlab\syntaxes\shaderlab.json`
 
 You may have noticed this from back as early as **Visual Studio 2019**, possibly even **Visual Studio 2017**. The first extensionless file called ***shader*** will 
