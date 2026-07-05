@@ -47,10 +47,10 @@ being syntax highlighted without validation errors.
 &nbsp;
 
 If you try adding in context keywords for GLSL such as `gl_Position, _MainTex, COLOR, Albedo, worldPos, etc..`, you'll notice that they will ***NOT*** light up. 
-There's been a bug in the matching conditional statement where these certain keywords silently error out and never become highlighted. It's possible this been unfixed 
+There's been a bug in the matching conditional statement where these certain keywords silently error out and never become highlighted. It's possible this has been unfixed 
 for 10+ years with Visual Studio IDE.  :bug::bug:
 
-## *2/3* To allow all GLSL context keywords to light up, copy the rest of this portion to allow OpenGL 4.6 keywords to light up. Or add or remove as much as you want.
+## *2/3* To allow all GLSL context keywords to light up, copy the rest of this portion to allow OpenGL 4.6 keywords to light up. Or add/remove as much as you want.
 ```
 "patterns": [
     {
@@ -168,9 +168,10 @@ for 10+ years with Visual Studio IDE.  :bug::bug:
   }
 }
 ```
-Or just copy the contents inside [shaderlab.json](shaderlab.json) and paste it.
+Or just copy the entire contents inside [shaderlab.json](shaderlab.json) and paste it.
 
-## *3/3* To change the color of your context keywords, you can replace the `"name"` section of the built-in scope to any of these and more. What the output will be is whatever theme you are using. It's possibly max 5 colors but this should be sufficient enough.
+## *3/3* To change the color of your context keywords, you can replace the `"name"` section of the built-in scope names to any of these and more. What the color output will 
+be is whatever current theme you are using. It's possibly max 5 colors but it should be sufficient enough.
 
   | Scope | Typical Color |
 | :--- | :--- |
@@ -188,7 +189,7 @@ Or just copy the contents inside [shaderlab.json](shaderlab.json) and paste it.
 | **comment** | Green |
 
 <br>
-Now all your GLSL shader files will light up, including the fixed context keywords, and change them to any color you want. Here is an example:
+Now all your GLSL shader files will light up, along with all GLSL context keywords, and add extra color to them. Here is an example:
 
 <br>
 <img width="2040" height="1492" alt="shader" src="https://github.com/user-attachments/assets/dde80d36-9798-43ef-9e83-f0dc38a06b72" />
@@ -200,4 +201,5 @@ Now all your GLSL shader files will light up, including the fixed context keywor
 1. **Place it in:** `C:\Program Files\Microsoft Visual Studio\18\community\common7\IDE\CommonExtensions\Microsoft\TextMate\Starterkit\Extensions\shaderlab\syntaxes\`
 2. **Restart** Visual Studio 2026.
 3. **Remove** your shader files from your project. *(Don't delete them, just add them back in).*
-4. **Open** your shader files to verify.
+4. **Open** your GLSL shader files.
+5. GLSL shader files now have color highlights, *with* context keywords, and custom colors. ***Finally!***
