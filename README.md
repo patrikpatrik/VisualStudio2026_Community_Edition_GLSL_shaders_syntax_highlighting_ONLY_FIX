@@ -185,6 +185,7 @@ Or just copy the contents inside [shaderlab.json](shaderlab.json) and paste it.
 | **comment** | Green |
 
 Now you can include all the GLSL shader files you need for syntax highlighting, have the context keywords light up, and change them to any color you want. Here is an example:
+
 <br>
 <img width="2040" height="1492" alt="shader" src="https://github.com/user-attachments/assets/dde80d36-9798-43ef-9e83-f0dc38a06b72" />
 
@@ -193,6 +194,3 @@ TL;DR, here is [shaderlab.json](shaderlab.json) file.
 3. Restart Visual Studio 2026.
 3. Remove your shader files from your project. (Don't delete them, just add them back in).
 4. Open your shader files to verify.
-
-
-
