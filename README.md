@@ -192,8 +192,8 @@ Now you can include all the GLSL shader files you need for syntax highlighting, 
 
 <br>
 <br>
-TL;DR, here is [shaderlab.json](shaderlab.json) file.
-1. Place it in: `C:\Program Files\Microsoft Visual Studio\18\community\common7\IDE\CommonExtensions\Microsoft\TextMate\Starterkit\Extensions\shaderlab\syntaxes\`
-3. Restart Visual Studio 2026.
-3. Remove your shader files from your project. (Don't delete them, just add them back in).
-4. Open your shader files to verify.
+##TL;DR here is [shaderlab.json](shaderlab.json) file.
+  1. Place it in: `C:\Program Files\Microsoft Visual Studio\18\community\common7\IDE\CommonExtensions\Microsoft\TextMate\Starterkit\Extensions\shaderlab\syntaxes\`
+  2. Restart Visual Studio 2026.
+  3. Remove your shader files from your project. (Don't delete them, just add them back in).
+  4. Open your shader files to verify.
