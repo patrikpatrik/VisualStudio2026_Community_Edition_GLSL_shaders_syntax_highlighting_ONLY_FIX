@@ -1,4 +1,4 @@
-# 1/3 A potential fix/workaround for Visual Studio 2026 Community Edition with enabling GLSL shaders with syntax highlighting ONLY.
+## *1/3* A potential fix/workaround for Visual Studio 2026 Community Edition with enabling GLSL shaders with syntax highlighting ONLY.
 You do not have to download anything from the marketplace. This is done without.
 **If TL;DR, skip to bottom paragraph!**
 
@@ -47,7 +47,7 @@ being highlighted without any validation errors.
 If you try adding in context keywords for GLSL such as `gl_Position, _MainTex, COLOR, Albedo, worldPos etc..`, you'll notice that they will ***NOT*** light up. 
 There's a bug in the matching conditional statement with certain keywords that silently errors out. This is what existed for possibly 10+ years in Visual Studio IDE.
 
-# 2/3 To allow all GLSL context keywords to light up, copy the rest of this portion to allow OpenGL 4.6 keywords to light up.
+## *2/3* To allow all GLSL context keywords to light up, copy the rest of this portion to allow OpenGL 4.6 keywords to light up.
 ```
 "patterns": [
     {
@@ -167,20 +167,20 @@ There's a bug in the matching conditional statement with certain keywords that s
 ```
 Or just copy the contents inside [shaderlab.json](shaderlab.json) and paste it.
 
-# 3/3 To change the color of your context keywords, you can replace the `"name"` section of the built-in scope to any of these and more. What the output will be is whatever theme you are using so it's possibly max 5 colors but should be more than enough to choose from.
--Scope	                         Typical Color
--entity.name.class.shaderlab	   Teal/Green
--entity.name.function.shaderlab	 Teal/Green
--keyword.shaderlab.shaderlab     Light Blue
--support.function.shaderlab	     Light Blue
--storage.type.shaderlab	         Light Blue
--markup.heading.shaderlab        Brown/Orange
--string.shaderlab                Brown/Orange
--string.quoted.shaderlab         Brown/Orange
--constant.numeric.shaderlab      Light Green
--variable.parameter.shaderlab	   Grey
--markup.underline.shaderlab      Grey
--comment	                       Green
+## *3/3* To change the color of your context keywords, you can replace the `"name"` section of the built-in scope to any of these and more. What the output will be is whatever theme you are using so it's possibly max 5 colors but should be more than enough to choose from.
+*Scope	                         Typical Color
+*entity.name.class.shaderlab	   Teal/Green
+*entity.name.function.shaderlab	 Teal/Green
+*keyword.shaderlab.shaderlab     Light Blue
+*support.function.shaderlab	     Light Blue
+*storage.type.shaderlab	         Light Blue
+*markup.heading.shaderlab        Brown/Orange
+*string.shaderlab                Brown/Orange
+*string.quoted.shaderlab         Brown/Orange
+*constant.numeric.shaderlab      Light Green
+*variable.parameter.shaderlab	   Grey
+*markup.underline.shaderlab      Grey
+*comment	                       Green
 
 Now you can include all the GLSL shader files you need for syntax highlighting, have the context keywords light up, and change them to any color you want. Here is an example:
 <img width="2040" height="1492" alt="shader" src="https://github.com/user-attachments/assets/dde80d36-9798-43ef-9e83-f0dc38a06b72" />
