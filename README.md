@@ -33,8 +33,9 @@ but then you would have to keep track of all your shader files and so forth and 
 This solution allows syntax highlighting ***only***, no error validation.
 
 Open shaderlab.json with any text editor and you will see why only the extensionless `shader` file works with syntax highlighting.
-<br>
+<details>
 <img width="1290" height="225" alt="shaderFile" src="https://github.com/user-attachments/assets/a1ffc226-a4e5-4341-a6dd-6adb9d1a89ee" />
+</details>
 
 This is the answer. Simply add any file what you want, and Visual Studio will now default the context highlighting to any GLSL shader file you put here.
 
