@@ -169,19 +169,19 @@ Or just copy the contents inside [shaderlab.json](shaderlab.json) and paste it.
 
 ## *3/3* To change the color of your context keywords, you can replace the `"name"` section of the built-in scope to any of these and more. What the output will be is whatever theme you are using so it's possibly max 5 colors but should be more than enough to choose from.
 
-*Scope	                         Typical Color
-*entity.name.class.shaderlab	   Teal/Green
-*entity.name.function.shaderlab	 Teal/Green
-*keyword.shaderlab.shaderlab     Light Blue
-*support.function.shaderlab	     Light Blue
-*storage.type.shaderlab	         Light Blue
-*markup.heading.shaderlab        Brown/Orange
-*string.shaderlab                Brown/Orange
-*string.quoted.shaderlab         Brown/Orange
-*constant.numeric.shaderlab      Light Green
-*variable.parameter.shaderlab	   Grey
-*markup.underline.shaderlab      Grey
-*comment	                       Green
+  *Scope	                         Typical Color
+  *entity.name.class.shaderlab	   Teal/Green
+  *entity.name.function.shaderlab	 Teal/Green
+  *keyword.shaderlab.shaderlab     Light Blue
+  *support.function.shaderlab	     Light Blue
+  *storage.type.shaderlab	         Light Blue
+  *markup.heading.shaderlab        Brown/Orange
+  *string.shaderlab                Brown/Orange
+  *string.quoted.shaderlab         Brown/Orange
+  *constant.numeric.shaderlab      Light Green
+  *variable.parameter.shaderlab	   Grey
+  *markup.underline.shaderlab      Grey
+  *comment	                       Green
 
 <br>
 Now you can include all the GLSL shader files you need for syntax highlighting, have the context keywords light up, and change them to any color you want. Here is an example:
