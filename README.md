@@ -32,10 +32,12 @@ but then you would have to keep track of all your shader files and so forth and 
 
 This solution allows syntax highlighting ***only***, no error validation.
 
-Open shaderlab.json with any text editor and you will see why the extensionless `shader` file works.
+Open shaderlab.json with any text editor and you will see why only the extensionless `shader` file works with syntax highlighting
+.
 <img width="1290" height="225" alt="shaderFile" src="https://github.com/user-attachments/assets/a1ffc226-a4e5-4341-a6dd-6adb9d1a89ee" />
 
 This is the answer. Simply add any file what you want, and Visual Studio will now default the context highlighting to any GLSL shader file you put here.
+
 <img width="978" height="511" alt="multiples" src="https://github.com/user-attachments/assets/e2eaa340-da13-4fa2-930f-c641a0248187" />
 
 If you want to stop here, save the file and restart Visual Studio 2026. Remove all your shader files & reload them again. You now have your GLSL code
