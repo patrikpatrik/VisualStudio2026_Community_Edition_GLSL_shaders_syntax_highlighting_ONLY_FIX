@@ -29,10 +29,8 @@ problematic because of certain parsing tokens to combine multi-staged shaders in
 #fragment shader
 #version 460 core
 ```
-or
-
-This would show up as error squiggly lines on the #vertex shader and #version 460 core, which is annoying to bypass. You could add `//` marks before them
-but then you would have to keep track of your shader files.
+These would show up as error squiggly lines on the #vertex shader and #version 460 core, which has even more workaround to bypass. You could add `//` marks before them
+but then you would have to keep track of all your shader files and so forth.
 
 The problem is with a file called shaderlab.json located:
 `C:\Program Files\Microsoft Visual Studio\18\community\common7\IDE\CommonExtensions\Microsoft\TextMate\Starterkit\Extensions\shaderlab\syntaxes\`
