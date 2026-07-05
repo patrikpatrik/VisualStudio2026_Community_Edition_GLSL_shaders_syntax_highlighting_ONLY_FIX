@@ -183,6 +183,21 @@ Or just copy the contents inside [shaderlab.json](shaderlab.json) and paste it.
   *markup.underline.shaderlab      Grey
   *comment	                       Green
 
+  | Scope | Typical Color |
+| :--- | :--- |
+| **entity.name.class.shaderlab** | Teal/Green |
+| **entity.name.function.shaderlab** | Teal/Green |
+| **keyword.shaderlab.shaderlab** | Light Blue |
+| **support.function.shaderlab** | Light Blue |
+| **storage.type.shaderlab** | Light Blue |
+| **markup.heading.shaderlab** | Brown/Orange |
+| **string.shaderlab** | Brown/Orange |
+| **string.quoted.shaderlab** | Brown/Orange |
+| **constant.numeric.shaderlab** | Light Green |
+| **variable.parameter.shaderlab** | Grey |
+| **markup.underline.shaderlab** | Grey |
+| **comment** | Green |
+
 <br>
 Now you can include all the GLSL shader files you need for syntax highlighting, have the context keywords light up, and change them to any color you want. Here is an example:
 <img width="2040" height="1492" alt="shader" src="https://github.com/user-attachments/assets/dde80d36-9798-43ef-9e83-f0dc38a06b72" />
