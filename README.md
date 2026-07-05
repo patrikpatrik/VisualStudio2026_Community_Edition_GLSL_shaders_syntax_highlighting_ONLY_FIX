@@ -200,4 +200,4 @@ Now all your GLSL shader files will light up<i><b>(1/3)</b></i>, along with all 
 2. **Restart** Visual Studio 2026.
 3. **Remove** your shader files from your project. *(Don't delete them, just add them back in).*
 4. **Open** your GLSL shader files.
-5. GLSL shader files now have color highlights, *with* context keywords, and custom colors. <u>***Finally!***</u>
+5. GLSL shader files now have color highlights, *with* context keywords, and custom colors. <ins>***Finally!***</ins>
