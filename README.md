@@ -14,7 +14,7 @@ For Visual Studio 2026, this file is located here:
 `C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\CommonExtensions\Microsoft\TextMate\Starterkit\Extensions\shaderlab\syntaxes\shaderlab.json`
 
 You may have noticed this from back as early as **Visual Studio 2019**, possibly even **Visual Studio 2017**. The first extensionless file called ***shader*** will 
-show syntax highlighting, yet for 'shader2', 'shader3', 'shader4', etc.. will not.
+show default syntax highlighting, yet for 'shader2', 'shader3', 'shader4', or any other file you create will not.
 
 Partial solution to this problem was: Tools -> Options -> Text Editor -> File Extensions -> adding your extension `.glsl` and selecting
 the drop down menu such as Visual Studio C++. You would get the syntax highlighting *plus* error correction. However, this error correction becomes 
