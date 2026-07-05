@@ -14,13 +14,12 @@ For Visual Studio 2026 it is located here:
 
 `C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\CommonExtensions\Microsoft\TextMate\Starterkit\Extensions\shaderlab\syntaxes\shaderlab.json`
 
-You may noticed this from back as early as Visual Studio 2019, possibly Visual Studio 2017 even. The first extensionless file called 'shader' will 
-somehow end up with syntax highlighting, yet for 'shader2', 'shader3', 'shader4', etc.. will not.
+You may have noticed this from back as early as Visual Studio 2019, possibly even Visual Studio 2017. The first extensionless file called **shader** will 
+show syntax highlighting, yet for 'shader2', 'shader3', 'shader4', etc.. will not.
 
-Partial solutions to this problem would be: Tools -> Options -> Text Editor -> File Extensions -> adding your extension `.glsl` and selecting
-a drop down menu such as Visual Studio C++. You would get the syntax highlighting *plus* error correction. However, this error correction becomes 
-problematic because of certain parsing tokens to combine multi-staged shaders into one shader file which can't be bypassed such as:
-
+Partial solution to this problem was: Tools -> Options -> Text Editor -> File Extensions -> adding your extension `.glsl` and selecting
+the drop down menu such as Visual Studio C++. You would get the syntax highlighting *plus* error correction. However, this error correction becomes 
+problematic because of certain parsing tokens to combine multi-staged shaders into one shader file which need more workarounds.
 ```
 #vertex shader
 #version 460 core
@@ -29,13 +28,12 @@ problematic because of certain parsing tokens to combine multi-staged shaders in
 #fragment shader
 #version 460 core
 ```
-These would show up as error squiggly lines on the #vertex shader and #version 460 core, which has even more workaround to bypass. You could add `//` marks before them
-but then you would have to keep track of all your shader files and so forth.
+These would show up as error squiggly lines on line 2 `#vertex shader` & line 3 `#version 460 core`. You could add `//` marks before them
+but then you would have to keep track of all your shader files and so forth and at this point its just another fix of a fix.
 
-The problem is with a file called shaderlab.json located:
-`C:\Program Files\Microsoft Visual Studio\18\community\common7\IDE\CommonExtensions\Microsoft\TextMate\Starterkit\Extensions\shaderlab\syntaxes\`
+This solution allows syntax highlighting ***only***, no error validation.
 
-Open it with any text editor and you will see why only a first extensionless shader file works with the default shader file.
+Open shaderlab.json with any text editor and you will see why the extensionless `shader` file works.
 <img width="1290" height="225" alt="shaderFile" src="https://github.com/user-attachments/assets/a1ffc226-a4e5-4341-a6dd-6adb9d1a89ee" />
 
 This is the answer. Simply add any file what you want, and Visual Studio will now default the context highlighting to any GLSL shader file you put here.
