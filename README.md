@@ -1,5 +1,5 @@
-#  A potential fix or workaround for Visual Studio 2026 Community Edition with enabling GLSL shaders with syntax highlighting ONLY.
-You do not have to download anything from the marketplace. This can be done all without.
+#  A potential fix/workaround for Visual Studio 2026 Community Edition with enabling GLSL shaders with syntax highlighting ONLY.
+You do not have to download anything from the marketplace. This is done without.
 
 **If TL;DR, skip to bottom paragraph!**
 
