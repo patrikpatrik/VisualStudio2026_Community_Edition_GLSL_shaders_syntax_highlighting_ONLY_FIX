@@ -8,7 +8,8 @@ This is for anyone who had frustrating problems with having multi-staged shaders
   - vs -> tcs -> tes -> gs -> fs
   - cs
 
-# The problem is shaderlab.json.
+# The problem is (shaderlab.json)[https://github.com/patrikpatrik/VisualStudio2026_Community_Edition_GLSL_shaders_syntax_highlighting_ONLY_FIX/blob/main/shaderlab.json]
+For your Visual Studio 2026, it is located `C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\CommonExtensions\Microsoft\TextMate\Starterkit\Extensions\shaderlab\syntaxes\shaderlab.json`
 
 You may noticed this from back as early as Visual Studio 2019, possibly Visual Studio 2017 even. The first extensionless file called 'shader' will 
 somehow end up with syntax highlighting, yet for 'shader2', 'shader3', 'shader4', etc.. will not.
