@@ -187,7 +187,7 @@ Or just copy the entire contents inside [shaderlab.json](shaderlab.json) and pas
 | **comment** | Green |
 
 <br>
-Now all your GLSL shader files will light up*(1/3)*, along with all GLSL context keywords*(2/3)*, and add extra color to them*(3/3)*. Here is an example:
+Now all your GLSL shader files will light up<i>(1/3)</i>, along with all GLSL context keywords<i>(2/3)</i>, and add extra color to them<i>(3/3)</i>. Here is an example:
 
 <br>
 <img width="2040" height="1492" alt="shader" src="https://github.com/user-attachments/assets/dde80d36-9798-43ef-9e83-f0dc38a06b72" />
@@ -200,4 +200,4 @@ Now all your GLSL shader files will light up*(1/3)*, along with all GLSL context
 2. **Restart** Visual Studio 2026.
 3. **Remove** your shader files from your project. *(Don't delete them, just add them back in).*
 4. **Open** your GLSL shader files.
-5. GLSL shader files now have color highlights, *with* context keywords, and custom colors. <u>***Finally!***</u>
+5. GLSL shader files now have color highlights, *with* context keywords, and custom colors. <u><b><i>Finally!</i></b></u>
