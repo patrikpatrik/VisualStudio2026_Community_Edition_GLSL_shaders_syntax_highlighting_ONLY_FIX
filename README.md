@@ -194,6 +194,7 @@ Now all your GLSL shader files will light up<i><b>(1/3)</b></i>, along with all 
 
 <br>
 <br>
+
 ## TL;DR: Here is the [shaderlab.json](shaderlab.json) file.
 
 1. **Place it in:** `C:\Program Files\Microsoft Visual Studio\18\community\common7\IDE\CommonExtensions\Microsoft\TextMate\Starterkit\Extensions\shaderlab\syntaxes\`
