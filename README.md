@@ -1,9 +1,8 @@
 #  A potential fix/workaround for Visual Studio 2026 Community Edition with enabling GLSL shaders with syntax highlighting ONLY.
 You do not have to download anything from the marketplace. This is done without.
-
 **If TL;DR, skip to bottom paragraph!**
 
-This is for anyone who had frustrating problems with having multi-staged shaders into a single shader file such as:
+This is for anyone who had frustrating problems with having multi-staged shaders into a *single shader file* such as:
   - vs -> fs
   - vs -> gs -> fs
   - vs -> tcs -> tes -> fs
