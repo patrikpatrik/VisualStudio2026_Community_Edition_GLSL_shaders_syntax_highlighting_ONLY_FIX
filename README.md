@@ -1,6 +1,8 @@
 #  A potential fix or workaround for Visual Studio 2026 Community Edition with enabling GLSL shaders with syntax highlighting ONLY.
 You do not have to download anything from the marketplace. This can be done all without.
 
+If TL;DR, #skip to bottom paragraph!
+
 This is for anyone who had frustrating problems with having multi-staged shaders into a single shader file such as:
   - vs -> fs
   - vs -> gs -> fs
@@ -9,7 +11,8 @@ This is for anyone who had frustrating problems with having multi-staged shaders
   - cs
 
 # The problem is [shaderlab.json](shaderlab.json)
-For your Visual Studio 2026, it is located `C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\CommonExtensions\Microsoft\TextMate\Starterkit\Extensions\shaderlab\syntaxes\shaderlab.json`
+For Visual Studio 2026 it is located here:
+`C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\CommonExtensions\Microsoft\TextMate\Starterkit\Extensions\shaderlab\syntaxes\shaderlab.json`
 
 You may noticed this from back as early as Visual Studio 2019, possibly Visual Studio 2017 even. The first extensionless file called 'shader' will 
 somehow end up with syntax highlighting, yet for 'shader2', 'shader3', 'shader4', etc.. will not.
