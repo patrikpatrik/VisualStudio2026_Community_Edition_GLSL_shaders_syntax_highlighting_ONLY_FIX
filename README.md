@@ -169,8 +169,8 @@ for 10+ years with Visual Studio IDE.  :bug::bug:
 ```
 Or just copy the entire contents inside [shaderlab.json](shaderlab.json) and paste it.
 
-## *3/3* To change the color of your context keywords, you can replace the `"name"` section of the built-in scope names to any of these and more. What the color output will 
-be is whatever current theme you are using. It's possibly max 5 colors but it should be sufficient enough.
+## *3/3* To change the color of your context keywords, you can replace the `"name"` section of the built-in scope names to any of these and more. What the color 
+output will be is whatever current theme you are using. It's possibly max 5 colors but it should be sufficient enough.
 
   | Scope | Typical Color |
 | :--- | :--- |
