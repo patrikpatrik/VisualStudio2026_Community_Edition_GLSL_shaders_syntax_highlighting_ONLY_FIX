@@ -1,4 +1,4 @@
-#  A potential fix/workaround for Visual Studio 2026 Community Edition with enabling GLSL shaders with syntax highlighting ONLY.
+# 1/3 A potential fix/workaround for Visual Studio 2026 Community Edition with enabling GLSL shaders with syntax highlighting ONLY.
 You do not have to download anything from the marketplace. This is done without.
 **If TL;DR, skip to bottom paragraph!**
 
@@ -38,17 +38,16 @@ Open shaderlab.json with any text editor and you will see why only the extension
 </details>
 
 This is the answer. Simply add any file what you want, and Visual Studio will now default the context highlighting to any GLSL shader file you put here.
-
+<details>
 <img width="978" height="511" alt="multiples" src="https://github.com/user-attachments/assets/e2eaa340-da13-4fa2-930f-c641a0248187" />
-
-If you want to stop here, save the file and restart Visual Studio 2026. Remove all your shader files & reload them again. You now have your GLSL code
+</details>
+If you want to stop here, save the shaderlab.json file and restart Visual Studio 2026. Remove all your shader files & reload them again. You now have your GLSL code
 being highlighted without any validation errors.
 
-If you took a closer look at the example shader file with the GLSL context highlighting, you'll notice that not all keywords highlighted such as `gl_Position,
-_MainTex, COLOR, Albedo, worldPos etc..` There was a bug in the matching conditional statement with certain keywords that silently errored out. This is what existed
-for possibly 10+ years in Visual Studio IDE.
+If you try adding in context keywords for GLSL such as `gl_Position, _MainTex, COLOR, Albedo, worldPos etc..`, you'll notice that they will ***NOT*** light up. 
+There's a bug in the matching conditional statement with certain keywords that silently errors out. This is what existed for possibly 10+ years in Visual Studio IDE.
 
-To highlight all GLSL keywords to shaderlab.json? Copy the rest of this portion of code which allows all OpenGL 4.6 keywords to highlight as well.
+# 2/3 To allow all GLSL context keywords to light up, copy the rest of this portion to allow OpenGL 4.6 keywords to light up.
 ```
 "patterns": [
     {
@@ -166,7 +165,9 @@ To highlight all GLSL keywords to shaderlab.json? Copy the rest of this portion 
   }
 }
 ```
-Lastly, to change the color of your context, you can replace the `"name"` section of the built-in scope name to any of these. What the output will be is whatever theme you are using so it's possibly max 5 colors.
+Or just copy the contents inside [shaderlab.json](shaderlab.json) and paste it.
+
+# 3/3 To change the color of your context keywords, you can replace the `"name"` section of the built-in scope to any of these and more. What the output will be is whatever theme you are using so it's possibly max 5 colors but should be more than enough to choose from.
 -Scope	                         Typical Color
 -entity.name.class.shaderlab	   Teal/Green
 -entity.name.function.shaderlab	 Teal/Green
@@ -184,11 +185,11 @@ Lastly, to change the color of your context, you can replace the `"name"` sectio
 Now you can include all the GLSL shader files you need for syntax highlighting, have the context keywords light up, and change them to any color you want. Here is an example:
 <img width="2040" height="1492" alt="shader" src="https://github.com/user-attachments/assets/dde80d36-9798-43ef-9e83-f0dc38a06b72" />
 
-TL;DR, here is shaderlab.json file. 
+TL;DR, here is [shaderlab.json](shaderlab.json) file.
 1. Place it in: `C:\Program Files\Microsoft Visual Studio\18\community\common7\IDE\CommonExtensions\Microsoft\TextMate\Starterkit\Extensions\shaderlab\syntaxes\`
-2. Remove your shader files from your project. (Don't delete them, just add them back in).
-3. Restart Visual Studio 2026
-4. Open your shader files
+3. Restart Visual Studio 2026.
+3. Remove your shader files from your project. (Don't delete them, just add them back in).
+4. Open your shader files to verify.
 
 
 
