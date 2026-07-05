@@ -184,11 +184,14 @@ Or just copy the contents inside [shaderlab.json](shaderlab.json) and paste it.
 | **markup.underline.shaderlab** | Grey |
 | **comment** | Green |
 
+<br>
 Now you can include all the GLSL shader files you need for syntax highlighting, have the context keywords light up, and change them to any color you want. Here is an example:
 
 <br>
 <img width="2040" height="1492" alt="shader" src="https://github.com/user-attachments/assets/dde80d36-9798-43ef-9e83-f0dc38a06b72" />
 
+<br>
+<br>
 TL;DR, here is [shaderlab.json](shaderlab.json) file.
 1. Place it in: `C:\Program Files\Microsoft Visual Studio\18\community\common7\IDE\CommonExtensions\Microsoft\TextMate\Starterkit\Extensions\shaderlab\syntaxes\`
 3. Restart Visual Studio 2026.
