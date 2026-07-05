@@ -44,6 +44,7 @@ This is the solution. Simply add any filename here and Visual Studio will includ
 If you want to stop here, save the shaderlab.json file and restart Visual Studio 2026. Remove all your shader files & reload them again. You now have your GLSL code
 being syntax highlighted without validation errors.
 
+&nbsp;
 
 If you try adding in context keywords for GLSL such as `gl_Position, _MainTex, COLOR, Albedo, worldPos, etc..`, you'll notice that they will ***NOT*** light up. 
 There's been a bug in the matching conditional statement where these certain keywords silently error out and never become highlighted. It's possible this been unfixed 
