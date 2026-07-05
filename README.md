@@ -168,6 +168,7 @@ There's a bug in the matching conditional statement with certain keywords that s
 Or just copy the contents inside [shaderlab.json](shaderlab.json) and paste it.
 
 ## *3/3* To change the color of your context keywords, you can replace the `"name"` section of the built-in scope to any of these and more. What the output will be is whatever theme you are using so it's possibly max 5 colors but should be more than enough to choose from.
+
 *Scope	                         Typical Color
 *entity.name.class.shaderlab	   Teal/Green
 *entity.name.function.shaderlab	 Teal/Green
@@ -182,6 +183,7 @@ Or just copy the contents inside [shaderlab.json](shaderlab.json) and paste it.
 *markup.underline.shaderlab      Grey
 *comment	                       Green
 
+<br>
 Now you can include all the GLSL shader files you need for syntax highlighting, have the context keywords light up, and change them to any color you want. Here is an example:
 <img width="2040" height="1492" alt="shader" src="https://github.com/user-attachments/assets/dde80d36-9798-43ef-9e83-f0dc38a06b72" />
 
