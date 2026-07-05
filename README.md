@@ -42,7 +42,7 @@ This is the solution. Simply add any filename here and Visual Studio will includ
 <img width="978" height="511" alt="multiples" src="https://github.com/user-attachments/assets/e2eaa340-da13-4fa2-930f-c641a0248187" />
 </details>
 If you want to stop here, save the shaderlab.json file and restart Visual Studio 2026. Remove all your shader files & reload them again. You now have your GLSL code
-being syntax highlighted without validation errors.
+being syntax highlighted without validation errors.<br>
 
 If you try adding in context keywords for GLSL such as `gl_Position, _MainTex, COLOR, Albedo, worldPos etc..`, you'll notice that they will ***NOT*** light up. 
 There's a bug in the matching conditional statement with certain keywords that silently errors out. This is what existed for possibly 10+ years in Visual Studio IDE.
