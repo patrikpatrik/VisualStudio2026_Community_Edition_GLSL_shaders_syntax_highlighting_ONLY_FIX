@@ -18,7 +18,7 @@ show syntax highlighting, yet for 'shader2', 'shader3', 'shader4', etc.. will no
 
 Partial solution to this problem was: Tools -> Options -> Text Editor -> File Extensions -> adding your extension `.glsl` and selecting
 the drop down menu such as Visual Studio C++. You would get the syntax highlighting *plus* error correction. However, this error correction becomes 
-problematic because of certain parsing tokens to combine multi-staged shaders into one shader file which need more workarounds.
+problematic because of certain parsing tokens to combine multi-staged shaders into one shader file which need more workarounds. For instance:
 ```
 #vertex shader
 #version 460 core
