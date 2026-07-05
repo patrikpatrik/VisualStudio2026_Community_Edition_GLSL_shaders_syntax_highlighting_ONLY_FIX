@@ -1,0 +1,129 @@
+﻿{
+  "scopeName": "source.shaderlab",
+  "name": "ShaderLab",
+  "fileTypes": [
+    "shader",
+    "shader2",
+    "shader3",
+    "shader4",
+    "shader5",
+    "shader6",
+    "shader7",
+    "shader8",
+    "shader9"
+  ],
+  "patterns": [
+    {
+      "match": "\\b([0-9]+\\.?[0-9]*)\\b",
+      "name": "constant.numeric.shaderlab"
+    },
+    {
+      "match": "\\b(Shader|Properties|Category|SubShader|Tags|Pass)\\b",
+      "name": "support.class.shaderlab"
+    },
+    {
+      "match": "\\b(CGPROGRAM|ENDCG)\\b",
+      "name": "support.class.shaderlab"
+    },
+    {
+      "match": "\\b(Dependency|Fallback)\\b",
+      "name": "support.variable.shaderlab"
+    },
+    {
+      "match": "^\\s*\\[(HideInInspector)\\]",
+      "name": "keyword.shaderlab"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#functions"
+    },
+    {
+      "include": "#cg"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "begin": "//",
+          "end": "$",
+          "name": "comment.line.double-slash.shaderlab"
+        },
+        {
+          "begin": "/\\*",
+          "end": "\\*/",
+          "name": "comment.line.block.shaderlab"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "begin": "\"",
+          "end": "\"",
+          "name": "string.quoted.double.shaderlab"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "match": "(?x) (?: (?= \\s )  (?:(?<=else|new|return) | (?<!\\w)) (\\s+))?\n\t\t\t(\\b \n\t\t\t\t(?!(while|for|do|if|else|switch|catch|enumerate|return|sizeof|[cr]?iterate)\\s*\\()(?:(?!NS)[A-Za-z_][A-Za-z0-9_]*+\\b | :: )++\t\t\t\t  # actual name\n\t\t\t)\n\t\t\t \\s*(\\()",
+          "captures": {
+            "1": {
+              "name": "punctuation.whitespace.function-call.leading.shaderlab"
+            },
+            "2": {
+              "name": "support.function.any-method.shaderlab"
+            },
+            "3": {
+              "name": "punctuation.definition.parameters.shaderlab"
+            }
+          },
+          "name": "meta.function-call.shaderlab"
+        }
+      ]
+    },
+    "cg": {
+      "patterns": [
+        {
+          "match": "^\\s*#\\s*(define|defined|elif|else|if|ifdef|ifndef|line|pragma|undef|version|extension|include|error)\\b",
+          "name": "entity.name.class.shaderlab"
+        },
+        {
+          "match": "\\.([rgba]{1,4}|[xyzw]{1,4}|[stpq]{1,4})\\b",
+          "name": "entity.name.class.shaderlab"
+        },
+        {
+          "match": "\\b(if|else|for|while|do|return|break|continue|switch|case|default|discard)\\b",
+          "name": "string.shaderlab"
+        },
+        {
+          "match": "\\b(const|extern|in|inline|inout|static|out|uniform|attribute|varying|layout|invariant|precision|highp|mediump|lowp|flat|smooth|noperspective|centroid|sample|patch|readonly|writeonly|coherent|volatile|restrict|shared|buffer|subroutine)\\b",
+          "name": "string.shaderlab"
+        },
+        {
+          "match": "\\b(gl_Position|gl_PointSize|gl_ClipDistance|gl_CullDistance|gl_FragCoord|gl_FrontFacing|gl_FragDepth|gl_PointCoord|gl_PrimitiveID|gl_SampleID|gl_SamplePosition|gl_SampleMaskIn|gl_SampleMask|gl_Layer|gl_ViewportIndex|gl_VertexID|gl_InstanceID|gl_InvocationID|gl_FragColor|gl_FragData|gl_GlobalInvocationID|gl_LocalInvocationID|gl_LocalInvocationIndex|gl_WorkGroupSize|gl_WorkGroupID|gl_NumWorkGroups|gl_PrimitiveIDIn|gl_PrimitiveIndicesNV|gl_TessCoord|gl_TessLevelOuter|gl_TessLevelInner|gl_PatchVerticesIn|gl_MaxVertexAttribs|gl_MaxCombinedTextureImageUnits|gl_MaxDrawBuffers|gl_MaxFragmentUniformComponents|gl_MaxTextureImageUnits|gl_MaxVaryingFloats|gl_MaxVertexUniformComponents|gl_MaxVertexTextureImageUnits|gl_DepthRange|gl_BaseVertex|gl_BaseInstance|gl_DrawID|gl_HelperInvocation|gl_SubgroupID|gl_SubgroupSize|gl_SubgroupInvocation|gl_BoundingBox|gl_ViewportMask|gl_MaxSamples|gl_MaxImageUnits|gl_MaxComputeWorkGroupCount|gl_MaxComputeWorkGroupSize|gl_MaxGeometryOutputVertices|gl_MaxPatchVertices|gl_MinProgramTexelOffset|gl_MaxProgramTexelOffset|gl_MaxClipDistances|gl_MaxCullDistances|gl_DepthRange|_MainTex|_Color|_Time|_SinTime|_CosTime|unity_DeltaTime|_ProjectionParams|_ScreenParams|viewDir|COLOR|screenPos|worldPos|worldRefl|worldNormal|Albedo|Normal|Emission|Specular|Gloss|Alpha|_Object2World|_World2Object|_WorldSpaceCameraPos|unity_Scale|_ObjectSpaceLightPos|appdata_base|appdata_tan|appdata_full|appdata_img|SurfaceOutput|UNITY_MATRIX_MVP|UNITY_MATRIX_MV|UNITY_MATRIX_V|UNITY_MATRIX_P|UNITY_MATRIX_VP|UNITY_MATRIX_T_MV|UNITY_MATRIX_IT_MV|UNITY_MATRIX_TEXTURE0|UNITY_MATRIX_TEXTURE1|UNITY_MATRIX_TEXTURE2|UNITY_MATRIX_TEXTURE3|void|struct|typedef|signed|unsigned|double|dvec[234]|dmat[234]|dmat[234]x[234]|float|vec[234]|mat[234]|mat[234]x[234]|half|fixed|long|int|ivec[234]|short|char|bool|bvec[234]|uint|uvec[234]|sampler[12]D|sampler3D|samplerCube|sampler[12]DShadow|samplerCubeShadow|sampler[12]DArray|sampler[12]DArrayShadow|sampler2DRect|sampler2DRectShadow|samplerBuffer|sampler2DMS|sampler2DMSArray|samplerCubeArray|samplerCubeArrayShadow|sampler1D|sampler1DShadow|sampler1DArray|sampler1DArrayShadow|isampler[123]D|isamplerCube|isampler[12]DArray|isampler2DRect|isampler2DMS|isampler2DMSArray|isamplerCubeArray|isampler1D|isampler1DArray|usampler[123]D|usamplerCube|usampler[12]DArray|usampler2DRect|usampler2DMS|usampler2DMSArray|usamplerCubeArray|usampler1D|usampler1DArray|image[123]D|imageCube|image[12]DArray|image2DRect|imageBuffer|image2DMS|image2DMSArray|imageCubeArray|image1D|image1DArray|iimage[123]D|iimageCube|uimage[123]D|uimageCube|atomic_uint)\\b",
+          "name": "entity.name.class.shaderlab"
+        },
+        {
+          "match": "\\b(radians|degrees|sin|cos|tan|asin|acos|atan|sinh|cosh|tanh|asinh|acosh|atanh|pow|exp|log|exp2|log2|sqrt|inversesqrt|abs|sign|floor|ceil|fract|mod|modf|min|max|clamp|mix|step|smoothstep|isnan|isinf|floatBitsToInt|floatBitsToUint|intBitsToFloat|uintBitsToFloat|fma|frexp|ldexp|packUnorm2x16|packUnorm4x8|packSnorm2x16|packSnorm4x8|unpackUnorm2x16|unpackUnorm4x8|unpackSnorm2x16|unpackSnorm4x8|packHalf2x16|unpackHalf2x16|packDouble2x32|unpackDouble2x32|length|distance|dot|cross|normalize|reflect|refract|faceforward|matrixCompMult|outerProduct|transpose|determinant|inverse|lessThan|lessThanEqual|greaterThan|greaterThanEqual|equal|notEqual|any|all|not|uaddCarry|usubBorrow|umulExtended|imulExtended|bitfieldExtract|bitfieldInsert|bitfieldReverse|bitCount|findLSB|findMSB|textureSize|textureQueryLod|textureQueryLevels|texture|textureProj|textureLod|textureOffset|texelFetch|texelFetchOffset|textureProjOffset|textureLodOffset|textureProjLod|textureProjLodOffset|textureGrad|textureGradOffset|textureProjGrad|textureProjGradOffset|textureGather|textureGatherOffset|textureGatherOffsets|textureSamples|atomicAdd|atomicMin|atomicMax|atomicAnd|atomicOr|atomicXor|atomicExchange|atomicCompSwap|atomicCounter|atomicCounterDecrement|atomicCounterIncrement|atomicCounterAdd|atomicCounterSubtract|atomicCounterMin|atomicCounterMax|atomicCounterAnd|atomicCounterOr|atomicCounterXor|atomicCounterExchange|atomicCounterCompSwap|imageSize|imageSamples|imageLoad|imageStore|imageAtomicAdd|imageAtomicMin|imageAtomicMax|imageAtomicAnd|imageAtomicOr|imageAtomicXor|imageAtomicExchange|imageAtomicCompSwap|dFdx|dFdy|dFdxFine|dFdyFine|dFdxCoarse|dFdyCoarse|fwidth|fwidthFine|fwidthCoarse|interpolateAtCentroid|interpolateAtSample|interpolateAtOffset|EmitStreamVertex|EndStreamPrimitive|EmitVertex|EndPrimitive|barrier|memoryBarrier|memoryBarrierAtomicCounter|memoryBarrierBuffer|memoryBarrierShared|memoryBarrierImage|groupMemoryBarrier)\\b",
+          "name": "string.shaderlab"
+        },
+        {
+          "match": "\\b(main)\\s*(?=\\()",
+          "name": "entity.name.class.shaderlab"
+        },
+        {
+          "match": "\\b(true|false)\\b",
+          "name": "entity.name.class.shaderlab"
+        }
+      ]
+    }
+  }
+}
