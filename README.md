@@ -1,8 +1,8 @@
-## *1/3* A potential fix/workaround for Visual Studio 2026 Community Edition with enabling GLSL shaders with syntax highlighting ONLY.
-You do not have to download anything from Visual Studio Marketplace. This is done without any extensions, just vanilla.<br>
+## *1/3)* A potential fix for Visual Studio 2026 Community Edition with enabling GLSL shaders with syntax highlighting ONLY.
+You do not have to download anything from Visual Studio Marketplace. This is done without any extensions, just vanilla ***Visual Studio 2026***.<br>
 **If TL;DR, skip to bottom!**
 
-This is for anyone who's had frustrating experiences with having multi-staged shaders combined into a *single shader file* such as:
+This is for anyone who's had frustrating experiences with context highlightning syntax *and* multi-staged shaders combined into a *single shader file*:
   - vs -> fs
   - vs -> gs -> fs
   - vs -> tcs -> tes -> fs
@@ -15,9 +15,9 @@ For Visual Studio 2026, this file is located here:
 You may have noticed this from back as early as **Visual Studio 2019**, possibly even **Visual Studio 2017**. The first extensionless file called ***shader*** will 
 show default syntax highlighting, yet for 'shader2', 'shader3', 'shader4', or any other file you create will not.
 
-Partial solution to this problem was: Tools -> Options -> Text Editor -> File Extensions -> adding your extension `.glsl` and selecting
+A partial workaround to this problem was: Tools -> Options -> Text Editor -> File Extensions -> adding your extension `.glsl` and selecting
 the drop down menu such as Visual Studio C++. You would get the syntax highlighting *plus* error correction. However, this error correction becomes 
-problematic because of certain parsing tokens to combine multi-staged shaders into one shader file which need more workarounds. For instance:
+problematic because of certain parsing tokens when separating each distinct shader which needs even more workarounds. For instance:
 ```
 #vertex shader
 #version 460 core
@@ -27,29 +27,29 @@ problematic because of certain parsing tokens to combine multi-staged shaders in
 #version 460 core
 ```
 These would show up as error squiggly lines on line 2 `#vertex shader` & line 3 `#version 460 core`. You could add `//` marks before them
-but then you would have to keep track of all your shader files and so forth and at this point its just another fix of a fix.
+but then you would have to keep track of all your shader files and so forth. At this point, its just another fix of a fix of a fix.
 
-This solution allows syntax highlighting ***only***, no error validation.
+This solution allows syntax highlighting to all shader files ***only***, with no error validation.
 
-Open shaderlab.json with any text editor and you will see why only the extensionless `shader` file works with syntax highlighting.
+Open shaderlab.json with any text editor and there is a single extensionless `shader` file that works by default with syntax highlighting.
 <details>
 <img width="1290" height="225" alt="shaderFile" src="https://github.com/user-attachments/assets/a1ffc226-a4e5-4341-a6dd-6adb9d1a89ee" />
 </details>
 
-This is the solution. Simply add any filename here and Visual Studio will include the default highlighting syntax to your other GLSL shader files as well.
+The solution? Simply add any filename you wish here and Visual Studio will include the default highlighting syntax to all your other GLSL shader files as well!
 <details>
 <img width="978" height="511" alt="multiples" src="https://github.com/user-attachments/assets/e2eaa340-da13-4fa2-930f-c641a0248187" />
 </details>
-If you want to stop here, save the shaderlab.json file and restart Visual Studio 2026. Remove all your shader files & reload them again. You now have your GLSL code
-being syntax highlighted without validation errors.
+If you want to stop here, save the shaderlab.json file and restart Visual Studio 2026. Remove all your shader files & reload them again. You now have all your GLSL files 
+with syntax highlighting without validation errors.
 
 &nbsp;
 
-If you try adding in context keywords for GLSL such as `gl_Position, _MainTex, COLOR, Albedo, worldPos, etc..`, you'll notice that they will ***NOT*** light up. 
-There's been a bug in the matching conditional statement where these certain keywords silently error out and never become highlighted. It's possible this has been unfixed 
+If you try adding in context keywords for GLSL such as `gl_Position, _MainTex, COLOR, Albedo, worldPos, etc..`, you'll notice these will ***NOT*** light up. 
+There is a bug in the matching conditional statement that silently errors out and skips context highlighting. It's possible this has been unfixed 
 for 10+ years with Visual Studio IDE.  :bug::bug:
 
-## *2/3* To allow all GLSL context keywords to light up, copy the rest of this portion to allow OpenGL 4.6 keywords to light up. Or add/remove as much as you want.
+## *2/3)* To allow all GLSL context keywords to light up, copy the rest of this portion; Or add/remove as much or as little as you want.
 ```
 "patterns": [
     {
@@ -169,7 +169,345 @@ for 10+ years with Visual Studio IDE.  :bug::bug:
 ```
 Or just copy the entire contents inside [shaderlab.json](shaderlab.json) and paste it.
 
-## *3/3* To change the color of your context keywords, you can replace the `"name"` section of the built-in scope names to any of these and more. What the color output will be is whatever current theme you are using. It's possibly max 5 colors but it should be sufficient enough.
+Here are the list of keywords in alphabetical order:
+
+<details>
+  
+```
+<Following keywords list that are context highlighted>
+bool
+bvec2
+bvec3
+bvec4
+dmat2
+dmat3
+dmat4
+dmat2x2
+dmat2x3
+dmat2x4
+dmat3x2
+dmat3x3
+dmat3x4
+dmat4x2
+dmat4x3
+dmat4x4
+double
+dvec2
+dvec3
+dvec4
+float
+int
+ivec2
+ivec3
+ivec4
+mat2
+mat3
+mat4
+mat2x2
+mat2x3
+mat2x4
+mat3x2
+mat3x3
+mat3x4
+mat4x2
+mat4x3
+mat4x4
+uint
+uvec2
+uvec3
+uvec4
+vec2
+vec3
+vec4
+void
+sampler1D
+sampler1DArray
+sampler1DArrayShadow
+sampler1DShadow
+sampler2D
+sampler2DArray
+sampler2DArrayShadow
+sampler2DMS
+sampler2DMSArray
+sampler2DRect
+sampler2DRectShadow
+sampler2DShadow
+sampler3D
+samplerBuffer
+samplerCube
+samplerCubeShadow
+isampler1D
+isampler1DArray
+isampler2D
+isampler2DArray
+isampler2DMS
+isampler2DMSArray
+isampler2DRect
+isampler3D
+isamplerBuffer
+isamplerCube
+usampler1D
+usampler1DArray
+usampler2D
+usampler2DArray
+usampler2DMS
+usampler2DMSArray
+usampler2DRect
+usampler3D
+usamplerBuffer
+usamplerCube
+image1D
+image1DArray
+image2D
+image2DArray
+image2DMS
+image2DMSArray
+image2DRect
+image3D
+imageBuffer
+imageCube
+iimage1D
+iimage1DArray
+iimage2D
+iimage2DArray
+iimage2DMS
+iimage2DMSArray
+iimage2DRect
+iimage3D
+iimageBuffer
+iimageCube
+uimage1D
+uimage1DArray
+uimage2D
+uimage2DArray
+uimage2DMS
+uimage2DMSArray
+uimage2DRect
+uimage3D
+uimageBuffer
+uimageCube
+attribute
+buffer
+centroid
+coherent
+const
+flat
+highp
+in
+inout
+invariant
+layout
+lowp
+mediump
+noperspective
+out
+patch
+precise
+precision
+readonly
+restrict
+sample
+shared
+smooth
+uniform
+varying
+volatile
+writeonly
+abs
+acos
+asin
+atan
+acosh
+asinh
+atanh
+ceil
+clamp
+cos
+cosh
+degrees
+exp
+exp2
+floatBitsToInt
+floatBitsToUint
+floor
+fract
+intBitsToFloat
+inversesqrt
+isinf
+isnan
+log
+log2
+max
+min
+mix
+mod
+modf
+pow
+radians
+round
+roundEven
+sign
+sin
+sinh
+smoothstep
+sqrt
+step
+tan
+tanh
+trunc
+uintBitsToFloat
+all
+any
+atomic_unit
+atomicAdd
+atomicAnd
+atomicCompSwap
+atomicCounter
+atomicCounterIncrement
+atomicCounterDecrement
+atomicExchange
+atomicMax
+atomicMin
+atomicOr
+atomicXor
+barrier
+bitCount
+bitfieldExtract
+bitfieldInsert
+bitfieldReverse
+cross
+determinant
+distance
+dot
+EmitVertex
+EndPrimitive
+equal
+faceforward
+findLSB
+findMSB
+fma
+frexp
+greaterThan
+greaterThanEqual
+groupMemoryBarrier
+imageAtomicAdd
+imageAtomicAnd
+imageAtomicCompSwap
+imageAtomicExchange
+imageAtomicMax
+imageAtomicMin
+imageAtomicOr
+imageAtomicXor
+imageLoad
+imageSize
+imageStore
+imulExtended
+inverse
+ldexp
+length
+lessThan
+lessThanEqual
+matrixCompMult
+memoryBarrier
+memoryBarrierAtomicCounter
+memoryBarrierBuffer
+memoryBarrierImage
+memoryBarrierShared
+normalize
+not
+notEqual
+outerProduct
+packDouble2x32
+packHalf2x16
+packSnorm2x16
+packSnorm4x8
+packUnorm2x16
+packUnorm4x8
+reflect
+refract
+texelFetch
+texelFetchOffset
+texture
+textureGather
+textureGatherOffset
+textureGatherOffsets
+textureGrad
+textureGradOffset
+textureLod
+textureLodOffset
+textureOffset
+textureProj
+textureProjGrad
+textureProjGradOffset
+textureProjLod
+textureProjLodOffset
+textureProjOffset
+textureQueryLevels
+textureQueryLod
+textureSize
+transpose
+uaddCarry
+umulExtended
+unpackDouble2x32
+unpackHalf2x16
+unpackSnorm2x16
+unpackSnorm4x8
+unpackUnorm2x16
+unpackUnorm4x8
+usubBorrow
+gl_ClipDistance
+gl_ClipVertex
+gl_FragColor
+gl_FragCoord
+gl_FragData
+gl_FragDepth
+gl_FrontFacing
+gl_GlobalInvocationID
+gl_InstanceID
+gl_InvocationID
+gl_Layer
+gl_LocalInvocationID
+gl_LocalInvocationIndex
+gl_NumSamples
+gl_NumWorkGroups
+gl_PatchVerticesIn
+gl_PointCoord
+gl_PointSize
+gl_Position
+gl_PrimitiveID
+gl_PrimitiveIDIn
+gl_SampleID
+gl_SampleMaskIn
+gl_SamplePosition
+gl_TessCoord
+gl_TessLevelInner
+gl_TessLevelOuter
+gl_VertexID
+gl_ViewportIndex
+gl_WorkGroupID
+gl_WorkGroupSize
+break
+case
+continue
+default
+discard
+do
+else
+false
+for
+if
+return
+struct
+subroutine
+switch
+true
+while
+```
+</details>
+
+## *3/3)* To change the color of your context keywords, you can replace the `"name"` section of the built-in scope names to any of the following and more.
+
+The color output will be based on your current theme that is selected. It's approximately from a color pool of 5 colors but it should be sufficient enough.
 
   | Scope | Typical Color |
 | :--- | :--- |
@@ -187,7 +525,7 @@ Or just copy the entire contents inside [shaderlab.json](shaderlab.json) and pas
 | **comment** | Green |
 
 <br>
-Now all your GLSL shader files will light up<i><b>(1/3)</b></i>, along with all GLSL context keywords<i><b>(2/3)</b></i>, and add extra color to them<i><b>(3/3)</b></i>. Here is an example:
+Now all your GLSL shader files will have context highlighting<i><b>(1/3)</b></i>, along with all GLSL context keywords<i><b>(2/3)</b></i>, and add extra colors to them<i><b>(3/3)</b></i>. Here is an example:
 
 <br>
 <img width="2040" height="1492" alt="shader" src="https://github.com/user-attachments/assets/dde80d36-9798-43ef-9e83-f0dc38a06b72" />
@@ -195,10 +533,13 @@ Now all your GLSL shader files will light up<i><b>(1/3)</b></i>, along with all 
 <br>
 <br>
 
-## TL;DR: Here is the [shaderlab.json](shaderlab.json) file.
+##&#8227;TL;DR: Here is the [shaderlab.json](shaderlab.json) file.
 
 1. **Place it in:** `C:\Program Files\Microsoft Visual Studio\18\community\common7\IDE\CommonExtensions\Microsoft\TextMate\Starterkit\Extensions\shaderlab\syntaxes\`
 2. **Restart** Visual Studio 2026.
 3. **Remove** your shader files from your project. *(Don't delete them, just add them back in).*
 4. **Open** your GLSL shader files.
 5. GLSL shader files now have color highlights, *with* context keywords, and custom colors. <ins>***Finally!***</ins>
+
+**&#8594;** <ins>**NOTE:**</ins> A **Visual Studio update** may overwrite shaderlab.json, so keep a backup of your edited version or a note to re-add your filenames after update.
+
