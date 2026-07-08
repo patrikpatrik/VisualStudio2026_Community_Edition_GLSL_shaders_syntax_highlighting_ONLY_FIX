@@ -174,7 +174,6 @@ Here are the list of keywords in alphabetical order:
 <details>
   
 ```
-<Following keywords list that are context highlighted>
 bool
 bvec2
 bvec3
@@ -526,6 +525,7 @@ The color output will be based on your current theme that is selected. It's appr
 
 <br>
 Now all your GLSL shader files will have context highlighting<i><b>(1/3)</b></i>, along with all GLSL context keywords<i><b>(2/3)</b></i>, and add extra colors to them<i><b>(3/3)</b></i>. Here is an example:
+<br>
 
 <br>
 <img width="2040" height="1492" alt="shader" src="https://github.com/user-attachments/assets/dde80d36-9798-43ef-9e83-f0dc38a06b72" />
@@ -540,6 +540,7 @@ Now all your GLSL shader files will have context highlighting<i><b>(1/3)</b></i>
 3. **Remove** your shader files from your project. *(Don't delete them, just add them back in).*
 4. **Open** your GLSL shader files.
 5. GLSL shader files now have color highlights, *with* context keywords, and custom colors. <ins>***Finally!***</ins>
+<br>
 
+<br>
 **&#8594;** <ins>**NOTE:**</ins> A **Visual Studio update** may overwrite shaderlab.json, so keep a backup of your edited version or a note to re-add your filenames after update.
-
