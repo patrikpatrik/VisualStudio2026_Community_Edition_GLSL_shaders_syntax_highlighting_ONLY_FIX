@@ -541,6 +541,6 @@ Now all your GLSL shader files will have context highlighting<i><b>(1/3)</b></i>
 4. **Open** your GLSL shader files.
 5. GLSL shader files now have color highlights, *with* context keywords, and custom colors. <ins>***Finally!***</ins>
 <br>
-
 <br>
+
 **&#8594;** <ins>**NOTE:**</ins> A **Visual Studio update** may overwrite shaderlab.json, so keep a backup of your edited version or a note to re-add your filenames after update.
