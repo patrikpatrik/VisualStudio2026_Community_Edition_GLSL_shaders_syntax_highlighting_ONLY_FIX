@@ -1,6 +1,6 @@
 ## *1/3)* A potential fix for Visual Studio 2026 Community Edition with enabling GLSL shaders with syntax highlighting ONLY.
 You do not have to download anything from Visual Studio Marketplace. This is done without any extensions, just vanilla ***Visual Studio 2026***.<br>
-**If TL;DR, skip to bottom!**
+[**If TL;DR, skip to bottom!**](#bottom-of-page)
 
 This is for anyone who's had frustrating experiences with context highlightning syntax *and* multi-staged shaders combined into a *single shader file*:
   - vs -> fs
@@ -529,7 +529,6 @@ Now all your GLSL shader files will have context highlighting<i><b>(1/3)</b></i>
 
 <br>
 <img width="2040" height="1492" alt="shader" src="https://github.com/user-attachments/assets/dde80d36-9798-43ef-9e83-f0dc38a06b72" />
-
 <br>
 <br>
 
@@ -543,4 +542,5 @@ Now all your GLSL shader files will have context highlighting<i><b>(1/3)</b></i>
 <br>
 <br>
 
+<a name="bottom-of-page"></a>
 **&#8594;** <ins>**NOTE:**</ins> A **Visual Studio update** may overwrite shaderlab.json, so keep a backup of your edited version or a note to re-add your filenames after update.
